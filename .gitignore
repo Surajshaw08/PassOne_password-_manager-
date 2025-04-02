@@ -1,0 +1,39 @@
+### Node.js ###
+node_modules/
+npm-debug.log*
+yarn-error.log*
+.env
+
+### Logs ###
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pm2.log
+
+### Build Files ###
+build/
+dist/
+
+### Editor Specific ###
+.vscode/
+.idea/
+.DS_Store
+
+### OS Specific ###
+Thumbs.db
+
+### React Specific ###
+/public/static
+/public/*.cache
+/public/*.map
+
+### MongoDB ###
+*.pem
+*.db
+
+### Miscellaneous ###
+coverage/
+*.swp
+*.swo
