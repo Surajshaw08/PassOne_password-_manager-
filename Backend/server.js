@@ -23,6 +23,9 @@ const authRoutes = require('./routes/authRoutes');
 
 app.use('/api/passwords', passwordRoutes);
 app.use('/api/auth', authRoutes);
+app.get("/", (req, res) => {
+  res.send("Yes, Server is up and running!🥳");
+});
 
 // Start server
 const PORT = process.env.PORT || 5000;
