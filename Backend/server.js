@@ -7,7 +7,16 @@ const app = express();
 
 // Middleware
 app.use(express.json());
-app.use(cors());
+// app.use(cors());
+
+app.use(cors({
+  origin: [
+    process.env.FRONTEND_URL, // Your frontend URL
+    process.env.DEV_BASE_URL, // Your frontend development URL
+  ], // allow Vite frontend
+  credentials: true               // if you're sending cookies or auth headers (like JWT)
+}));
+
 
 // MongoDB connection
 mongoose.connect(process.env.MONGO_URI, {

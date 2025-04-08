@@ -64,7 +64,7 @@ const Manager = () => {
   const handleDelete = async (id) => {
     try {
       const token = localStorage.getItem('token');
-      const res = await fetch(`${API_BASE_URL}api/passwords/${id}`, {
+      const res = await fetch(`${API_BASE_URL}/api/passwords/${id}`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${token}`,
