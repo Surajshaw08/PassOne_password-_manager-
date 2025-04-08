@@ -25,7 +25,7 @@ const Navbar = () => {
             <lord-icon
               className="h-10 w-10 cursor-pointer"
               src="https://cdn.lordicon.com/hhljfoaj.json"
-              trigger="loop"
+              trigger="hover"
               stroke="bold"
               state="hover-looking-around"
               colors="primary:#000000,secondary:#109121,tertiary:#ffffff"
@@ -37,22 +37,19 @@ const Navbar = () => {
               stroke="bold"
               colors="primary:#000000,secondary:#ffffff,tertiary:#f24c00,quaternary:#109121"
             ></lord-icon>
+             <Link to="/login">
+            <button className="px-4 py-2 bg-green-500 text-white rounded-full hover:bg-green-600 transition cursor-pointer">
+              Login
+            </button>
+          </Link>
           </ul>
         </div>
 
         {/* Login & Signup Buttons */}
-        <div className="mr-2 md:mr-5 space-x-4">
-          <Link to="/login">
-            <button className="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 transition">
-              Login
-            </button>
-          </Link>
-          <Link to="/signup">
-            <button className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition">
-              Signup
-            </button>
-          </Link>
-        </div>
+        {/* <div className="mr-2 md:mr-5 space-x-4">
+         
+          
+        </div> */}
       </nav>
     </div>
   );

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate , Link } from 'react-router-dom';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -51,12 +51,22 @@ export default function Login() {
           required
         />
 
+      <div className=' space-y-3'>
+
         <button
           type="submit"
-          className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
+          className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 cursor-pointer"
         >
           Login
         </button>
+
+        <Link to="/signup">
+            <button className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 cursor-pointer">
+              Signup
+            </button>
+          </Link>
+
+          </div>
 
         {message && (
           <p className="mt-4 text-center text-sm text-red-500">{message}</p>

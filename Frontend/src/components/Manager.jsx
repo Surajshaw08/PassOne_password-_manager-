@@ -141,7 +141,7 @@ const Manager = () => {
           <div className='flex justify-center'>
             <button
               onClick={handleSave}
-              className='flex items-center justify-center gap-2 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition w-full md:w-40'
+              className='flex items-center justify-center gap-2 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition w-full md:w-40 cursor-pointer'
             >
               <Save size={18} />
               Save
@@ -199,7 +199,7 @@ const Manager = () => {
                       </td>
 
                       <td className="p-3 text-center">
-                        <div className="flex items-center justify-center gap-3">
+                        <div className="flex items-center justify-center gap-3 cursor-pointer">
                           <lord-icon
                             src="https://cdn.lordicon.com/exymduqj.json"
                             trigger="hover"
