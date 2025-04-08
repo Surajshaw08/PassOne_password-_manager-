@@ -33,24 +33,25 @@ const Navbar = () => {
         {/* Menu Icons (Desktop) */}
         <div className="hidden md:flex items-center justify-center">
           <ul className="flex flex-row space-x-4 md:space-x-7 font-medium text-white">
-            <Link to='/AboutUs'>
+            
+            {/* About Us Icon with Tooltip */}
             <div className="relative group">
-              <lord-icon
-                className="h-10 w-10 cursor-pointer"
-                src="https://cdn.lordicon.com/hhljfoaj.json"
-                trigger="hover"
-                stroke="bold"
-                state="hover-looking-around"
-                colors="primary:#000000,secondary:#109121,tertiary:#ffffff"
-              ></lord-icon>
-
-              {/* Tooltip below icon */}
+              <Link to="/AboutUs">
+                <lord-icon
+                  className="h-10 w-10 cursor-pointer"
+                  src="https://cdn.lordicon.com/hhljfoaj.json"
+                  trigger="hover"
+                  stroke="bold"
+                  state="hover-looking-around"
+                  colors="primary:#000000,secondary:#109121,tertiary:#ffffff"
+                ></lord-icon>
+              </Link>
               <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-4 py-2 bg-white text-black text-sm rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-50 whitespace-nowrap">
                 About Us
               </div>
             </div>
-            </Link>
 
+            {/* Terms & Conditions Icon with Tooltip */}
             <div className="relative group">
               <lord-icon
                 className="h-10 w-10 cursor-pointer"
@@ -59,15 +60,12 @@ const Navbar = () => {
                 stroke="bold"
                 colors="primary:#000000,secondary:#ffffff,tertiary:#f24c00,quaternary:#109121"
               ></lord-icon>
-
-              {/* Tooltip popup below the icon */}
               <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-4 py-2 bg-white text-black text-sm rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-50 whitespace-nowrap">
                 Term & Conditions
               </div>
-
             </div>
 
-
+            {/* Login Button */}
             <Link to="/login">
               <button className="px-4 py-2 bg-green-500 text-white rounded-full hover:bg-green-600 transition cursor-pointer">
                 Login
@@ -80,24 +78,34 @@ const Navbar = () => {
       {/* Mobile Menu (Only visible when toggled) */}
       {isMenuOpen && (
         <div className="md:hidden bg-slate-700 px-4 py-3 space-y-4 text-white">
-          <div className="flex space-x-4">
-            <lord-icon
-              className="h-8 w-8"
-              src="https://cdn.lordicon.com/hhljfoaj.json"
-              trigger="hover"
-              stroke="bold"
-              state="hover-looking-around"
-              colors="primary:#000000,secondary:#109121,tertiary:#ffffff"
-            ></lord-icon>
-            <lord-icon
-              className="h-8 w-8"
-              src="https://cdn.lordicon.com/bdnahcds.json"
-              trigger="hover"
-              stroke="bold"
-              colors="primary:#000000,secondary:#ffffff,tertiary:#f24c00,quaternary:#109121"
-            ></lord-icon>
+          <div className="flex flex-col space-y-3">
+            <Link to="/AboutUs" onClick={() => setIsMenuOpen(false)}>
+              <div className="flex items-center space-x-2">
+                <lord-icon
+                  className="h-8 w-8"
+                  src="https://cdn.lordicon.com/hhljfoaj.json"
+                  trigger="hover"
+                  stroke="bold"
+                  state="hover-looking-around"
+                  colors="primary:#000000,secondary:#109121,tertiary:#ffffff"
+                ></lord-icon>
+                <span>About Us</span>
+              </div>
+            </Link>
+            
+            <div className="flex items-center space-x-2">
+              <lord-icon
+                className="h-8 w-8"
+                src="https://cdn.lordicon.com/bdnahcds.json"
+                trigger="hover"
+                stroke="bold"
+                colors="primary:#000000,secondary:#ffffff,tertiary:#f24c00,quaternary:#109121"
+              ></lord-icon>
+              <span>Term & Conditions</span>
+            </div>
           </div>
-          <Link to="/login">
+
+          <Link to="/login" onClick={() => setIsMenuOpen(false)}>
             <button className="w-full px-4 py-2 bg-green-500 text-white rounded-full hover:bg-green-600 transition">
               Login
             </button>

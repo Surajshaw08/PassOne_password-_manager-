@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Eye, EyeOff, Save, Clipboard } from 'lucide-react';
+import { API_BASE_URL } from '../../pages/config';
 
 const Manager = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -16,7 +17,7 @@ const Manager = () => {
     if (url && username && password) {
       try {
         const token = localStorage.getItem('token');
-        const res = await fetch('http://localhost:5000/api/passwords', {
+        const res = await fetch(`${API_BASE_URL}/api/passwords`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -42,7 +43,7 @@ const Manager = () => {
     const fetchData = async () => {
       try {
         const token = localStorage.getItem('token');
-        const res = await fetch('http://localhost:5000/api/passwords', {
+        const res = await fetch(`${API_BASE_URL}/api/passwords`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -63,7 +64,7 @@ const Manager = () => {
   const handleDelete = async (id) => {
     try {
       const token = localStorage.getItem('token');
-      const res = await fetch(`http://localhost:5000/api/passwords/${id}`, {
+      const res = await fetch(`${API_BASE_URL}api/passwords/${id}`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${token}`,
