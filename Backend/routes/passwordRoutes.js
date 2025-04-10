@@ -3,8 +3,8 @@ const router = express.Router();
 const passwordController = require('../controller/passwordController');
 const authMiddleware = require('../middleware/authMiddleware');
 
-router.post('/', authMiddleware, passwordController.savePassword);
-router.get('/', authMiddleware, passwordController.getPasswords);
+router.post('/savePassword', authMiddleware, passwordController.savePassword);
+router.get('/getPassword', authMiddleware, passwordController.getPasswords);
 router.delete('/:id', authMiddleware, passwordController.deletePassword);
 
 module.exports = router;
